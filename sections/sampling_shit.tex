@@ -1,0 +1,37 @@
+\section{Sampling Theorie}
+
+Sei $x(t)$ ein zeitkontinuierliches Signal.
+\begin{equation*}
+    x(t) \knochen X(\omega) = \int_{-\infty}^{\infty} x(t)e^{-j\omega t}\,dt
+\end{equation*}
+
+Das  Signal  wird  mit  einer  Abtastfrequenz  $f_s$  mit  der  Periode  $T_s  =
+\frac{1}{f_s}$ abgetastet.
+\begin{equation*}
+    x[k] = x(k\cdot T) = x\left(\frac{k}{T}\right)
+\end{equation*}
+
+Das  abgetastete  Signal  kann  als  Folge  von  gewichteten Dirac-St\"osse  als
+kontinuierliche Funktion dargestellt werden  werden. Dabei ist zu beachten, dass
+das  Spektrum   $X_a(f)$   sich   im   Intervall  $T_s$  periodisch  wiederholt.
+\begin{equation*}
+    x_a(t) = \sum_{k=-\infty}^{\infty} x[k]\cdot\delta(t - kT) \knochen X_a(f) = \frac{1}{T_s} \sum_{k=-\infty}^{\infty} X\left(f - \frac{k}{T_s}\right)
+\end{equation*}
+
+Ein Zero-Order-Hold  DAC rekonstruiert das Signal treppenf\"ormig. Dies kann mit
+der Faltung von $x_a(t)$ mit $h(t)$ beschrieben werden.
+\begin{equation*}
+    x_{D/A}(t) = x_a(t) \star h(t) \hspace{5mm}\textrm{wobei}\hspace{5mm} h(t) =
+    \begin{cases}
+        1    & \hspace{5mm} 0 \le t \le T_s \\
+        0    & \hspace{5mm} \textrm{sonst}  \\
+    \end{cases}
+\end{equation*}
+
+Im Spektrum entsteht somit eine $\frac{\sin  x}{x}$  Verzerrung  des  periodisch
+widerholenden Amplitudengangs von $x_a(t)$.
+\begin{equation*}
+    x_{D/A}(t)= \sum_{k=-\infty}^{\infty} x[k] \cdot rect\left(\frac{t - kT}{T}\right) \knochen X_{D/A}(f) = T_s \cdot X_a(f) \cdot sinc(\pi f T_s)
+\end{equation*}
+
+

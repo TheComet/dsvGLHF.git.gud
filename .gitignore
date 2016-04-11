@@ -13,3 +13,7 @@
 *.run.xml
 *.toc
 !/images/*.pdf
+dsvGL_formelsammlung.pdf
+
+# shit
+*.swp

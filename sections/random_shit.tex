@@ -1,3 +1,35 @@
-\section{Allgemein}
+\section{Allgemeines}
 
-\lipsum
+\begin{equation*}
+    x(t) = \sum_{k=-\infty}^{\infty} \delta(t - kT_s) \knochen \sum_{k=-\infty}^{\infty} e^{-j2\pi fkT_s}
+\end{equation*}
+
+\subsection{Impulseantwort}
+
+\begin{equation*}
+    \delta[k] = \begin{cases}
+        1 & \hspace{5mm} k=0 \\
+        0 & \hspace{5mm} k \neq 0 \\
+    \end{cases}
+\end{equation*}
+
+\subsection{Diskrete Faltung}
+
+\begin{equation*}
+    y[k] = x[.] \star h[.] = \sum_{i=-\infty}^{\infty} x[i]\cdot h[k-i] = \sum_{i=-\infty}^{\infty} x[k-i] \cdot h[i]
+\end{equation*}
+
+\subsection{Normierte (Kreis-) Frequenz}
+
+\begin{align*}
+    f_n    &= f T_s = \frac{f}{f_s}                     &\hspace{8mm}\textrm{Normierte Frequenz} \\
+    \Omega &= 2\pi f_n = 2\pi f T_s = 2\pi\frac{f}{f_s} &\hspace{8mm}\textrm{Normierte Kreisfrequenz} \\
+\end{align*}
+
+\subsection{Komplexer Frequenzgang}
+\begin{align*}
+    \underline{H}(\Omega) &= \sum_{m=-\infty}^{\infty} h[m] e^{-j\Omega \cdot m} \\
+    \underline{H}(f)      &= \sum_{m=-\infty}^{\infty} h[m] e^{-j2\pi f m T}
+\end{align*}
+
+
